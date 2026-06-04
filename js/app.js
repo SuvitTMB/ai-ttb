@@ -449,10 +449,6 @@ async function startConversation() {
     document.getElementById('btn-start-conversation').classList.add('hidden');
     document.getElementById('btn-stop-conversation').classList.remove('hidden');
 
-    // 4. Toggle Panels
-    document.getElementById('mckinsey-triggers-panel').classList.add('hidden');
-    document.getElementById('live-chat-panel').classList.remove('hidden');
-
     // 5. Initialize conversation history with welcome greeting
     state.transcriptHistory = [];
     const welcomeText = currentGender === 'female' 
@@ -488,10 +484,6 @@ function stopConversation() {
     document.getElementById('btn-play-briefing').classList.remove('hidden');
     document.getElementById('btn-start-conversation').classList.remove('hidden');
     document.getElementById('btn-stop-conversation').classList.add('hidden');
-
-    // Toggle Panels
-    document.getElementById('mckinsey-triggers-panel').classList.remove('hidden');
-    document.getElementById('live-chat-panel').classList.add('hidden');
 
     // Reset status indicator
     document.getElementById('ai-speaking-status').innerText = "ผู้ช่วย AI พร้อมนำเสนอสรุปความเห็นเชิงรุก";
