@@ -1,0 +1,100 @@
+/* Immersive animations for realistic humanized feels */
+@keyframes subtle-breath {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-3px) scale(1.003); }
+}
+@keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+@keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(0.95); opacity: 0.5; }
+}
+@keyframes hologram-glow {
+    0%, 100% { opacity: 0.15; filter: hue-rotate(0deg); }
+    50% { opacity: 0.35; filter: hue-rotate(15deg); }
+}
+
+.animate-breath {
+    animation: subtle-breath 4s ease-in-out infinite;
+}
+.animate-blink {
+    transform-origin: center 42px;
+    animation: blink 4s infinite;
+}
+.animate-blink-female {
+    transform-origin: center 45px;
+    animation: blink 3.8s infinite;
+}
+.animate-pulse-ring {
+    animation: pulse-ring 2s infinite;
+}
+.animate-hologram {
+    animation: hologram-glow 3s infinite;
+}
+
+/* Ultra premium blurred glass panels */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.glass-dark {
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.glass-panel-dark {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.glow-blue {
+    box-shadow: 0 0 35px -5px rgba(0, 86, 179, 0.45);
+}
+.glow-orange {
+    box-shadow: 0 0 35px -5px rgba(255, 127, 0, 0.35);
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Slide-over Drawer Transitions */
+.drawer-transition {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+/* Futuristic Holographic Terminal Frame & Glows */
+.hologram-frame {
+    border: 2px solid rgba(0, 86, 179, 0.4);
+    box-shadow: 0 0 25px rgba(0, 86, 179, 0.25), inset 0 0 15px rgba(0, 86, 179, 0.15);
+    background: radial-gradient(circle at center, rgba(15, 23, 42, 0.65) 0%, rgba(10, 15, 30, 0.9) 100%);
+    position: relative;
+}
+.hologram-frame::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
+    z-index: 2;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    opacity: 0.75;
+}
+.glow-text-blue {
+    text-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
+}
+.glow-text-orange {
+    text-shadow: 0 0 8px rgba(255, 127, 0, 0.6);
+}
+
+
