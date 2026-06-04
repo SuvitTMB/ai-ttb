@@ -95,8 +95,8 @@
                 </div>
 
                 <!-- Character Viewport Area -->
-                <div
-                    class="relative z-10 flex-1 flex flex-col items-center justify-end py-6 select-none animate-breath">
+                <div class="relative z-10 flex-1 flex flex-col items-center justify-end py-6 select-none animate-breath"
+                    style="padding-bottom:0rem;padding-top:4rem;">
 
                     <!-- Speech bubble Subtitles overlaid dynamically -->
                     <div id="ai-speech-bubble"
@@ -332,8 +332,8 @@
                 </div>
 
                 <!-- Footer status area of Advisor -->
-                <div
-                    class="relative z-10 glass-dark rounded-2xl p-3 flex flex-col sm:flex-row items-center justify-between gap-3 border border-white/10">
+                <div class="relative z-10 glass-dark rounded-2xl p-3 flex flex-col sm:flex-row items-center justify-between gap-3 border border-white/10"
+                    style="margin-top:-10px;">
                     <div class="flex items-center gap-2">
                         <div id="ai-status-dot" class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                         <span class="text-[11px] font-semibold text-slate-300" id="ai-speaking-status">ผู้ช่วย AI
@@ -409,46 +409,7 @@
                 </div>
             </div>
 
-            <!-- Live Chat Log Panel (Hidden by default, shown when conversation is active) -->
-            <div id="live-chat-panel"
-                class="hidden glass-panel rounded-3xl p-4 shadow-xl border border-white/10 flex flex-col gap-3 min-h-[220px] max-h-[300px]">
-                <div class="flex items-center justify-between border-b border-white/10 pb-2">
-                    <div class="flex items-center gap-2">
-                        <div
-                            class="h-6 w-6 rounded-full bg-ttbOrange/20 flex items-center justify-center text-ttbOrange">
-                            <i class="fa-solid fa-comments text-xs"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xs font-bold text-white tracking-wide">Live Conversation Log</h3>
-                            <p class="text-[9px] text-slate-400 uppercase tracking-wider">โหมดพูดคุยต่อเนื่องกับผู้ช่วย
-                                AI</p>
-                        </div>
-                    </div>
-                    <!-- Indicator for listening state -->
-                    <div id="chat-listening-indicator"
-                        class="flex items-center gap-1.5 px-2.5 py-1 bg-purple-500/20 text-purple-300 rounded-full text-[9px] border border-purple-500/30">
-                        <span class="h-1.5 w-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-                        <span>กำลังฟัง...</span>
-                    </div>
-                </div>
 
-                <!-- Chat Messages Scroll Container -->
-                <div id="chat-messages-container"
-                    class="flex-1 overflow-y-auto space-y-2 pr-1 text-xs no-scrollbar min-h-[100px] max-h-[160px]">
-                    <!-- Welcome greeting generated dynamically -->
-                </div>
-
-                <!-- Chat Input and Mic Status -->
-                <div class="flex items-center gap-2 pt-2 border-t border-white/10">
-                    <input type="text" id="chat-text-input" placeholder="พิมพ์คุยกับ AI ตรงนี้ หรือพูดผ่านไมโครโฟน..."
-                        class="flex-1 bg-slate-950/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-ttbBlue transition-all shadow-inner"
-                        onkeypress="window.handleChatInputKeyPress(event)">
-                    <button onclick="window.submitChatText()"
-                        class="h-8 w-8 rounded-xl bg-ttbBlue hover:bg-ttbBlue/80 text-white flex items-center justify-center transition-all active:scale-95">
-                        <i class="fa-solid fa-paper-plane text-xs"></i>
-                    </button>
-                </div>
-            </div>
         </section>
 
     </main>
