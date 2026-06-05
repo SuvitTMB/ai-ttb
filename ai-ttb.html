@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>ttb AI Executive Assistant</title>
     <!-- Tailwind CSS for modern elite styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Sarabun for premium typography -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap"
+    <!-- Google Fonts: Kanit for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- FontAwesome for executive financial and technological icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,7 +26,7 @@
                         premiumGold: '#D4AF37',
                     },
                     fontFamily: {
-                        sans: ['Sarabun', 'Inter', 'sans-serif'],
+                        sans: ['Kanit', 'sans-serif'],
                     }
                 }
             }
@@ -80,7 +80,7 @@
                 <div class="absolute inset-0 z-0 bg-slate-950/5 backdrop-blur-[1px]"></div>
 
                 <!-- HUD Status Overlay (Agent Controls) -->
-                <div class="relative z-10 flex items-center justify-between">
+                <div class="relative z-10 flex items-center justify-center">
                     <!-- Male/Female Dynamic Gender Selector -->
                     <div class="flex bg-slate-950/50 p-1 rounded-xl border border-white/10 shadow-inner">
                         <button onclick="setGender('female')" id="btn-gender-female"
@@ -336,18 +336,18 @@
                     style="margin-top:-10px;">
                     <div class="flex items-center gap-2">
                         <div id="ai-status-dot" class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <span class="text-[11px] font-semibold text-slate-300" id="ai-speaking-status">ผู้ช่วย AI
+                        <span class="text-[12px] font-semibold text-slate-300" id="ai-speaking-status">ผู้ช่วย AI
                             พร้อมนำเสนอสรุปความเห็นเชิงรุก</span>
                     </div>
                     <div class="flex items-center gap-2 w-full sm:w-auto">
                         <!-- Play Briefing Button -->
                         <button id="btn-play-briefing" onclick="simulateBriefingSpeech()"
-                            class="w-full sm:w-auto text-xs px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-slate-200 font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1.5 active:scale-95 border border-white/10">
+                            class="w-full sm:w-auto text-xs px-4 py-2 bg-gradient-to-r from-ttbBlue to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1.5 active:scale-95 border border-white/10">
                             <i class="fa-solid fa-play"></i> พรีเซนต์คำสั่งเสียง
                         </button>
                         <!-- Start Conversation Button -->
                         <button id="btn-start-conversation" onclick="startConversation()"
-                            class="w-full sm:w-auto text-xs px-4 py-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1.5 active:scale-95 border border-white/10">
+                            class="w-full sm:w-auto text-xs px-4 py-2 bg-gradient-to-r from-ttbOrange to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1.5 active:scale-95 border border-white/10">
                             <i class="fa-solid fa-microphone"></i> เริ่มการสนทนา
                         </button>
                         <!-- End Conversation Button (Hidden by default) -->
@@ -364,46 +364,58 @@
             <div id="mckinsey-triggers-panel"
                 class="glass-panel rounded-3xl p-4 shadow-xl border border-white/10 flex flex-col gap-2.5">
                 <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <i class="fa-solid fa-brain text-ttbBlue"></i> เลือกรวมรายงานยุทธศาสตร์ด่วน (McKinsey Strategic
-                    Triggers)
+                    <i class="fa-solid fa-brain text-ttbBlue"></i> ข้อมูลและข่าวสารธนาคาร ทีทีบี
                 </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    <button onclick="triggerIntelligence('news')"
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="triggerDynamicBriefing('products')"
                         class="text-left text-xs bg-slate-900/60 hover:bg-slate-800/80 p-3 rounded-2xl border border-white/10 shadow-sm transition-all hover:border-ttbBlue/50 duration-300 flex flex-col justify-between gap-3 group active:scale-95">
                         <div
                             class="h-8 w-8 rounded-xl bg-blue-950/40 text-ttbBlue flex items-center justify-center group-hover:bg-ttbBlue group-hover:text-white transition-all border border-blue-500/20">
+                            <i class="fa-solid fa-wallet text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-200 block group-hover:text-white">ข้อมูลผลิตภัณฑ์
+                                ttb</span>
+                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">ttb Product Info</span>
+                        </div>
+                    </button>
+
+                    <button onclick="triggerDynamicBriefing('news')"
+                        class="text-left text-xs bg-slate-900/60 hover:bg-slate-800/80 p-3 rounded-2xl border border-white/10 shadow-sm transition-all hover:border-orange-500/50 duration-300 flex flex-col justify-between gap-3 group active:scale-95">
+                        <div
+                            class="h-8 w-8 rounded-xl bg-orange-950/40 text-orange-400 flex items-center justify-center group-hover:bg-[#f68b1f] group-hover:text-white transition-all border border-orange-500/20">
                             <i class="fa-solid fa-newspaper text-xs"></i>
                         </div>
                         <div>
-                            <span class="font-bold text-slate-200 block group-hover:text-white">สรุปยุทธศาสตร์</span>
-                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">Competitive
-                                Outlook</span>
+                            <span class="font-bold text-slate-200 block group-hover:text-white">ข่าวสารธนาคาร ttb</span>
+                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">ttb Bank News</span>
                         </div>
                     </button>
 
-                    <button onclick="triggerIntelligence('risk')"
-                        class="text-left text-xs bg-slate-900/60 hover:bg-slate-800/80 p-3 rounded-2xl border border-white/10 shadow-sm transition-all hover:border-rose-500/50 duration-300 flex flex-col justify-between gap-3 group active:scale-95">
-                        <div
-                            class="h-8 w-8 rounded-xl bg-rose-950/40 text-rose-400 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-all border border-rose-500/20">
-                            <i class="fa-solid fa-shield-halved text-xs"></i>
-                        </div>
-                        <div>
-                            <span
-                                class="font-bold text-slate-200 block group-hover:text-white">วิเคราะห์ความเสี่ยง</span>
-                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">Risk Assessment</span>
-                        </div>
-                    </button>
-
-                    <button onclick="triggerIntelligence('opp')"
+                    <button onclick="triggerDynamicBriefing('generalNews')"
                         class="text-left text-xs bg-slate-900/60 hover:bg-slate-800/80 p-3 rounded-2xl border border-white/10 shadow-sm transition-all hover:border-emerald-500/50 duration-300 flex flex-col justify-between gap-3 group active:scale-95">
                         <div
                             class="h-8 w-8 rounded-xl bg-emerald-950/40 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all border border-emerald-500/20">
                             <i class="fa-solid fa-chart-line text-xs"></i>
                         </div>
                         <div>
-                            <span class="font-bold text-slate-200 block group-hover:text-white">มองหาโอกาสเติบโต</span>
-                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">Growth
-                                Opportunities</span>
+                            <span
+                                class="font-bold text-slate-200 block group-hover:text-white">สรุปข่าวสารการธนาคาร</span>
+                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">Banking News
+                                Summary</span>
+                        </div>
+                    </button>
+
+                    <button onclick="triggerDynamicBriefing('economicNews')"
+                        class="text-left text-xs bg-slate-900/60 hover:bg-slate-800/80 p-3 rounded-2xl border border-white/10 shadow-sm transition-all hover:border-purple-500/50 duration-300 flex flex-col justify-between gap-3 group active:scale-95">
+                        <div
+                            class="h-8 w-8 rounded-xl bg-purple-950/40 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-all border border-purple-500/20">
+                            <i class="fa-solid fa-money-bill-trend-up text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-200 block group-hover:text-white">ข่าวเศรษฐกิจสำคัญ</span>
+                            <span class="text-[9px] text-slate-400 group-hover:text-slate-300">Important Economic
+                                News</span>
                         </div>
                     </button>
                 </div>
@@ -442,11 +454,6 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <!-- Status Pills of current category -->
-                <span id="briefing-pill"
-                    class="text-[9px] font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-full uppercase tracking-wider border border-white/5">
-                    Ready to Brief
-                </span>
                 <!-- Close Button -->
                 <button onclick="closeBriefingDrawer()"
                     class="h-8 w-8 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all border border-white/5 active:scale-95"
@@ -471,7 +478,7 @@
                     ยินดีเสนอแนวทางประเมินทิศทางการแข่งขันและรายงานวิเคราะห์ความเสี่ยงล่วงหน้า
                 </p>
                 <div
-                    class="text-[11px] bg-slate-950/50 border border-white/5 p-4 rounded-2xl space-y-2.5 text-slate-400">
+                    class="text-[12px] bg-slate-950/50 border border-white/5 p-4 rounded-2xl space-y-2.5 text-slate-400">
                     <span class="font-bold text-slate-200 block">📊 ฟังก์ชันและหลักการวิเคราะห์เชิงลึก:</span>
                     <ul class="space-y-1.5 list-disc list-inside">
                         <li>ดึงข้อมูลความเคลื่อนไหวจาก **ai_agent_prompts.txt**</li>
@@ -499,7 +506,7 @@
                 <!-- Executive Summary -->
                 <div class="bg-slate-900/60 border border-white/10 rounded-2xl p-4 shadow-sm">
                     <span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">Executive Summary</span>
-                    <p id="active-summary" class="text-[11px] text-slate-300 leading-relaxed font-light">
+                    <p id="active-summary" class="text-[12px] text-slate-300 leading-relaxed font-light">
                         -
                     </p>
                 </div>
@@ -551,6 +558,13 @@
 
             </div>
 
+            <!-- Dynamic List View Container (Shown for products / news categories) -->
+            <div id="briefing-list-container" class="hidden space-y-4">
+                <div id="briefing-list-items" class="space-y-4">
+                    <!-- Dynamic list items will be injected here -->
+                </div>
+            </div>
+
         </div>
 
         <!-- Footnotes indicating dynamic integration -->
@@ -568,7 +582,7 @@
 
 
 
-    <script src="js/app.js" type="module" defer></script>
+    <script src="js/app.js?v=7" type="module" defer></script>
 </body>
 
 </html>
