@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <title>ttb AI Executive Assistant</title>
+    <title>ttb AI Product Specialist</title>
     <!-- Tailwind CSS for modern elite styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Kanit for premium typography -->
@@ -48,9 +48,9 @@
                     onerror="this.onerror=null; this.src='https://placehold.co/120x45/FFF/000?text=ttb';">
                 <div class="h-6 w-[1px] bg-white/30 mx-2"></div>
                 <div class="flex flex-col">
-                    <span class="text-xs font-bold text-ttbDarkBlue tracking-wide uppercase">AI Executive
-                        Assistant</span>
-                    <span class="text-[9px] text-white/80 font-medium">Professional Strategy Partner</span>
+                    <span class="text-xs font-bold text-ttbDarkBlue tracking-wide uppercase">AI Product
+                        Specialist</span>
+                    <span class="text-[9px] text-white/80 font-medium">ttb Product & Service Expert</span>
                 </div>
             </div>
 
@@ -100,11 +100,10 @@
 
                     <!-- Speech bubble Subtitles overlaid dynamically -->
                     <div id="ai-speech-bubble"
-                        class="absolute top-2 left-2 right-2 bg-slate-950/95 backdrop-blur-md text-white text-xs px-4 py-3 rounded-2xl shadow-2xl border border-white/20 transition-all opacity-0 pointer-events-none transform -translate-y-2">
+                        class="absolute top-2 left-2 right-2 bg-black/95 backdrop-blur-md text-white text-xs px-4 py-3 rounded-2xl shadow-2xl border border-white/20 transition-all opacity-0 pointer-events-none transform -translate-y-2">
                         <div class="flex gap-2 items-start">
-                            <span
-                                class="text-[10px] text-ttbOrange font-black uppercase tracking-wider animate-pulse">[AI
-                                Speech]</span>
+                            <span class="text-[10px] text-white font-black uppercase tracking-wider animate-pulse"
+                                id="speech-bubble-label">[AI]</span>
                             <p class="leading-relaxed font-light text-slate-100" id="ai-subtitle-text"></p>
                         </div>
                     </div>
@@ -336,14 +335,14 @@
                     style="margin-top:-10px;">
                     <div class="flex items-center gap-2">
                         <div id="ai-status-dot" class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <span class="text-[12px] font-semibold text-slate-300" id="ai-speaking-status">ผู้ช่วย AI
-                            พร้อมนำเสนอสรุปความเห็นเชิงรุก</span>
+                        <span class="text-[12px] font-semibold text-slate-300" id="ai-speaking-status">ผู้เชี่ยวชาญ AI
+                            พร้อมให้บริการข้อมูลผลิตภัณฑ์</span>
                     </div>
                     <div class="flex items-center gap-2 w-full sm:w-auto">
                         <!-- Play Briefing Button -->
                         <button id="btn-play-briefing" onclick="simulateBriefingSpeech()"
                             class="w-full sm:w-auto text-xs px-4 py-2 bg-gradient-to-r from-ttbBlue to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1.5 active:scale-95 border border-white/10">
-                            <i class="fa-solid fa-play"></i> พรีเซนต์คำสั่งเสียง
+                            <i class="fa-solid fa-play"></i> การใช้งาน
                         </button>
                         <!-- Start Conversation Button -->
                         <button id="btn-start-conversation" onclick="startConversation()"
@@ -363,14 +362,14 @@
             <!-- Sleek Minimalist Controls Block (Replacing bulky inputs with strategic trigger actions) -->
             <div id="mckinsey-triggers-panel"
                 class="glass-panel rounded-3xl p-4 shadow-xl border border-white/10 flex flex-col gap-2.5">
-                <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <i class="fa-solid fa-brain text-ttbBlue"></i> ข้อมูลและข่าวสารธนาคาร ทีทีบี
+                <h3 class="text-[12px] text-slate-200 tracking-wider flex items-center gap-1.5">
+                    <i class="fa-solid fa-brain"></i> ข้อมูลและข่าวสารธนาคาร ทีทีบี
                 </h3>
                 <div class="grid grid-cols-2 gap-3">
                     <button onclick="triggerDynamicBriefing('products')"
                         class="text-left text-xs bg-slate-900/60 hover:bg-slate-800/80 p-3 rounded-2xl border border-white/10 shadow-sm transition-all hover:border-ttbBlue/50 duration-300 flex flex-col justify-between gap-3 group active:scale-95">
                         <div
-                            class="h-8 w-8 rounded-xl bg-blue-950/40 text-ttbBlue flex items-center justify-center group-hover:bg-ttbBlue group-hover:text-white transition-all border border-blue-500/20">
+                            class="h-8 w-8 rounded-xl bg-blue-950/40 flex items-center justify-center group-hover:bg-ttbBlue group-hover:text-white transition-all border border-blue-500/20">
                             <i class="fa-solid fa-wallet text-xs"></i>
                         </div>
                         <div>
@@ -428,7 +427,7 @@
 
     <!-- BRIEFING DRAWER OVERLAY -->
     <div id="briefing-drawer-overlay"
-        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-40 hidden transition-opacity duration-300"
+        class="fixed inset-0 bg-[#001026]/90 backdrop-blur-sm z-40 hidden transition-opacity duration-300"
         onclick="closeBriefingDrawer()">
     </div>
 
@@ -468,27 +467,28 @@
 
             <!-- Initial Default Greeting Layout Card (Should be hidden or shown inside drawer if nothing loaded) -->
             <div id="briefing-welcome-card"
-                class="bg-slate-900/80 border border-white/10 rounded-3xl p-5 shadow-lg space-y-4">
+                class="bg-[#001026]/40 border border-white/10 rounded-3xl p-5 shadow-lg space-y-4">
                 <div class="flex items-center gap-2 text-ttbOrange">
                     <i class="fa-solid fa-circle-nodes animate-pulse text-xs"></i>
-                    <span class="text-xs font-black uppercase tracking-wider">ระบบพร้อมช่วยเหลือผู้บริหาร</span>
+                    <span class="text-xs font-black uppercase tracking-wider">ระบบพร้อมช่วยเหลือและให้ข้อมูล</span>
                 </div>
                 <p class="text-xs text-slate-300 leading-relaxed font-light">
-                    สวัสดีครับท่านผู้บริหาร ระบบจำลอง <strong class="text-ttbOrange">ttb AI Executive Assistant</strong>
-                    ยินดีเสนอแนวทางประเมินทิศทางการแข่งขันและรายงานวิเคราะห์ความเสี่ยงล่วงหน้า
+                    สวัสดีครับ ยินดีต้อนรับสู่ระบบจำลอง <strong class="text-ttbOrange">ttb AI Product
+                        Specialist</strong>
+                    ผู้เชี่ยวชาญที่จะช่วยให้ข้อมูลผลิตภัณฑ์และบริการที่ถูกต้อง แม่นยำ และครบถ้วน
                 </p>
                 <div
                     class="text-[12px] bg-slate-950/50 border border-white/5 p-4 rounded-2xl space-y-2.5 text-slate-400">
-                    <span class="font-bold text-slate-200 block">📊 ฟังก์ชันและหลักการวิเคราะห์เชิงลึก:</span>
+                    <span class="font-bold text-slate-200 block">📊 ฟังก์ชันและการให้บริการข้อมูล:</span>
                     <ul class="space-y-1.5 list-disc list-inside">
-                        <li>ดึงข้อมูลความเคลื่อนไหวจาก **ai_agent_prompts.txt**</li>
-                        <li>ประยุกต์ใช้โมเดลวิเคราะห์กลยุทธ์สไตล์ **McKinsey Consultant**</li>
+                        <li>ดึงข้อมูลความเคลื่อนไหวจาก **AIExecutiveAssistant.txt**</li>
+                        <li>วิเคราะห์ข้อมูลและตอบคำถามตรงประเด็นตามที่ลูกค้าสอบถาม</li>
                         <li>สลับสับเปลี่ยนตัวละคร **คุณกนกวรรณ (หญิง)** และ **คุณวรุตม์ (ชาย)** ได้ทันที</li>
-                        <li>รองรับการนำเสนอรายงานด้วยเสียงพูดตอบสนองอารมณ์</li>
+                        <li>รองรับการนำเสนอรายละเอียดด้วยเสียงพูดตอบสนองเป็นธรรมชาติ</li>
                     </ul>
                 </div>
                 <p class="text-[10px] text-ttbOrange font-semibold text-center animate-pulse">
-                    💡 โปรดเลือกหัวข้อรายงานเพื่อเปิดแผนยุทธศาสตร์และรับฟังรายงานฉบับเต็ม
+                    💡 โปรดเลือกหัวข้อที่ต้องการตรวจสอบรายละเอียดผลิตภัณฑ์และบริการ
                 </p>
             </div>
 
@@ -496,7 +496,7 @@
             <div id="briefing-active-card" class="hidden space-y-4">
 
                 <!-- Headline -->
-                <div class="bg-slate-900/60 border border-white/10 rounded-2xl p-4 shadow-sm">
+                <div class="bg-[#001026]/40 border border-white/10 rounded-2xl p-4 shadow-sm">
                     <span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">Headline Overview</span>
                     <h3 id="active-headline" class="text-xs font-bold text-white leading-snug">
                         -
@@ -504,7 +504,7 @@
                 </div>
 
                 <!-- Executive Summary -->
-                <div class="bg-slate-900/60 border border-white/10 rounded-2xl p-4 shadow-sm">
+                <div class="bg-[#001026]/40 border border-white/10 rounded-2xl p-4 shadow-sm">
                     <span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">Executive Summary</span>
                     <p id="active-summary" class="text-[12px] text-slate-300 leading-relaxed font-light">
                         -
@@ -515,7 +515,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 
                     <div
-                        class="bg-slate-900/60 border border-white/10 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
+                        class="bg-[#001026]/40 border border-white/10 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
                         <span class="text-[9px] text-ttbBlue font-bold uppercase flex items-center gap-1">
                             <i class="fa-solid fa-lightbulb"></i> Key Insight
                         </span>
@@ -525,7 +525,7 @@
                     </div>
 
                     <div
-                        class="bg-slate-900/60 border border-white/10 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
+                        class="bg-[#001026]/40 border border-white/10 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
                         <span class="text-[9px] text-amber-500 font-bold uppercase flex items-center gap-1">
                             <i class="fa-solid fa-triangle-exclamation"></i> Why It Matters
                         </span>
@@ -535,7 +535,7 @@
                     </div>
 
                     <div
-                        class="bg-slate-900/60 border border-white/10 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
+                        class="bg-[#001026]/40 border border-white/10 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
                         <span class="text-[9px] text-rose-400 font-bold uppercase flex items-center gap-1">
                             <i class="fa-solid fa-building-columns"></i> Impact on ttb
                         </span>
@@ -545,7 +545,7 @@
                     </div>
 
                     <div
-                        class="bg-gradient-to-br from-emerald-950/40 to-slate-900/40 border border-emerald-500/20 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
+                        class="bg-gradient-to-br from-emerald-950/40 to-[#001026]/40 border border-emerald-500/20 rounded-2xl p-3 shadow-sm flex flex-col justify-between">
                         <span class="text-[9px] text-emerald-400 font-bold uppercase flex items-center gap-1">
                             <i class="fa-solid fa-circle-check"></i> Recommended Action
                         </span>
